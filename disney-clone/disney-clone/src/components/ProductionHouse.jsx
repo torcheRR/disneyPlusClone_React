@@ -5,11 +5,11 @@ import nationalG from "../assets/images/nationalG.png";
 import pixar from "../assets/images/pixar.png";
 import starwars from "../assets/images/starwar.png";
 
-import disneyV from "../assets/videos/disney";
-import marvelV from "../assets/videos/marvel";
-import nationalgeographic from "../assets/videos/national-geographic";
-import pixarV from "../assets/videos/pixarV";
-import starwarsV from "../assets/videos/star-wars";
+import disneyV from "../assets/videos/disney.mp4";
+import marvelV from "../assets/videos/marvel.mp4";
+import nationalgeographic from "../assets/videos/national-geographic.mp4";
+import pixarV from "../assets/videos/pixarV.mp4";
+import starwarsV from "../assets/videos/star-wars.mp4";
 
 function ProductionHouse() {
   const ProductionHouseList = [
