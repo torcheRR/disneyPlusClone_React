@@ -40,22 +40,19 @@ function ProductionHouse() {
     },
   ];
 
-  const [playing, setPlaying] = useState(false);
-
   const handleMouseOver = (video) => {
     video.play();
-    setPlaying(true);
   };
 
   const handleMouseOut = (video) => {
     video.pause();
-    setPlaying(false);
   };
 
   return (
     <div className="flex md:mx-10 gap-5 md:gap-10 p-0 md:p-2 px-5 md:px-16 relative">
       {ProductionHouseList.map((item) => (
         <div
+          key={item.id}
           className="
           border-[2px]
           border-gray-600
@@ -75,7 +72,7 @@ function ProductionHouse() {
               src={item.video}
               loop
               playsInline
-              className="absolute rounded-md hover:opacity-40 opacity-0"
+              className="absolute rounded-md opacity-0 hover:opacity-100"
             />
           </div>
           <img
