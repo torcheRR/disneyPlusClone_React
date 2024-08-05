@@ -8,7 +8,7 @@ import starwars from "../assets/images/starwar.png";
 import disneyV from "../assets/videos/disney.mp4";
 import marvelV from "../assets/videos/marvel.mp4";
 import nationalgeographic from "../assets/videos/national-geographic.mp4";
-import pixarV from "../assets/videos/pixarV.mp4";
+import pixarV from "../assets/videos/pixar.mp4";
 import starwarsV from "../assets/videos/star-wars.mp4";
 
 function ProductionHouse() {
@@ -78,8 +78,12 @@ function ProductionHouse() {
           <img
             src={item.image}
             className="w-full top-0"
-            onMouseOver={(e) => handleMouseOver(e.target.parentNode.querySelector('video'))}
-            onMouseOut={(e) => handleMouseOut(e.target.parentNode.querySelector('video'))}
+            onMouseOver={(e) =>
+              handleMouseOver(e.target.parentNode.querySelector("video"))
+            }
+            onMouseOut={(e) =>
+              handleMouseOut(e.target.parentNode.querySelector("video"))
+            }
           />
         </div>
       ))}
