@@ -69,18 +69,21 @@ function ProductionHouse() {
           relative
           shadow-2xl
           shadow-gray-700"
-          onMouseOver={(e) => handleMouseOver(e.target.querySelector('video'))}
-          onMouseOut={(e) => handleMouseOut(e.target.querySelector('video'))}
         >
           <div>
             <video
               src={item.video}
               loop
               playsInline
-              className="absolute rounded-md hover:opacity-30 opacity-0"
+              className="absolute rounded-md hover:opacity-40 opacity-0"
             />
           </div>
-          <img src={item.image} className="w-full top-0"/>
+          <img
+            src={item.image}
+            className="w-full top-0"
+            onMouseOver={(e) => handleMouseOver(e.target.parentNode.querySelector('video'))}
+            onMouseOut={(e) => handleMouseOut(e.target.parentNode.querySelector('video'))}
+          />
         </div>
       ))}
     </div>
