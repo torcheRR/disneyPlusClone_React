@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import disney from "../assets/images/disney.png";
 import marvel from "../assets/images/marvel.png";
 import nationalG from "../assets/images/nationalG.png";
@@ -39,32 +39,45 @@ function ProductionHouse() {
       video: starwarsV,
     },
   ];
+
+  const [playing, setPlaying] = useState(false);
+
+  const handleMouseOver = (video) => {
+    video.play();
+    setPlaying(true);
+  };
+
+  const handleMouseOut = (video) => {
+    video.pause();
+    setPlaying(false);
+  };
+
   return (
     <div className="flex md:mx-10 gap-5 md:gap-10 p-0 md:p-2 px-5 md:px-16 relative">
       {ProductionHouseList.map((item) => (
         <div
-        className="
-        border-[2px]
-        border-gray-600
-        rounded-lg
-        hover:scale-105
-        transition-all 
-        w-screen
-        md:w-full
-        ease-in-out 
-        cursor-pointer
-        relative
-        shadow-2xl
-        shadow-gray-700"
+          className="
+          border-[2px]
+          border-gray-600
+          rounded-lg
+          hover:scale-105
+          transition-all 
+          w-screen
+          md:w-full
+          ease-in-out 
+          cursor-pointer
+          relative
+          shadow-2xl
+          shadow-gray-700"
+          onMouseOver={(e) => handleMouseOver(e.target.querySelector('video'))}
+          onMouseOut={(e) => handleMouseOut(e.target.querySelector('video'))}
         >
           <div>
             <video
               src={item.video}
               loop
-              autoPlay
               playsInline
-              className="absolute rounded-md hover:opacity-30
-             opacity-0"
+              className="absolute rounded-md hover:opacity-30 opacity-0"
             />
           </div>
           <img src={item.image} className="w-full top-0"/>
